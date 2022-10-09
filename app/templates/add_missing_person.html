@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div style="display:flex; flex-direction:column">
+  <h3 style="margin-bottom:30px;" class="mt-5">Add missing person</h3>
+  <form action="" method="post" enctype="multipart/form-data">
+    {{ form.csrf_token }}
+    <div class="form-group">
+        <label>Name</label>
+        {{form.name(class="form-control", placeholder="Name")}}
+    </div>
+    <div class="form-group">
+      <label>Birthday</label>
+      {{form.birthday(class="form-control", placeholder="Birthday")}}
+    </div>
+    <div class="form-group">
+      <label>Birthplace</label>
+      {{form.birthplace(class="form-control", placeholder="Birthplace")}}
+    </div>
+    <div class="form-group">
+      <label>Place_of_disappearance</label>
+      {{form.place_of_disappearance(class="form-control", placeholder="Place_of_disappearance")}}
+    </div>
+    <div class="form-group">
+      <label>Disappearance_details</label>
+      {{form.disappearance_details(class="form-control", placeholder="Disappearance_details")}}
+    </div>
+    <div class="form-group">
+      <label>Photo</label>
+      {{form.photo(class="form-control", placeholder="Photo")}}
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+
+{% endblock %}

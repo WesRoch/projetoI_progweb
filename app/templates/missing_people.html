@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div style='display:flex; flex-direction:column'>
+  <h3 style='margin-bottom:30px;' class="mt-5">Missing people</h3>
+  <div>
+    <ul class="list-group">
+      {% for person in missing_people%}
+      <li class="list-group-item">
+        <a href="{{url_for('get_missing_person', id=person.id)}}">
+          <img src="{{url_for('get_missing_person_images', id=person.id)}}" alt="missing_person_image">
+          <p>{{person.name}}</p>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div>
+    <a id="plus_button" href="{{ url_for('add_missing_person')}}">
+      <img src="static/img/plus.png" alt="plus_button">
+    </a>
+  </div>
+  
+</div>
+
+
+
+
+{% endblock %}

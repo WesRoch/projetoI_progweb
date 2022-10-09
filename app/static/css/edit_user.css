@@ -1,0 +1,10 @@
+#usr-buttons-container{
+  display:flex;
+  flex-direction: column;
+  margin-top: 20px;
+  align-items: center;
+}
+
+.btn-user {
+  margin-bottom: 13px;
+}

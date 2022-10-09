@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div id="content-container"style='display:flex; flex-direction:column'>
+  <h3 style='margin-bottom:30px;' class="mt-5">Missing person</h3>
+  <div id="image-container">
+    <img src="{{url_for('get_missing_person_images', id=missing_person.id)}}" alt="">
+  </div>
+  <div>
+    <form action="{{url_for('update_missing_person', id=id)}}" method="post" enctype="multipart/form-data">
+      {{ form.csrf_token }}
+      <div class="form-group">
+          <label>Name</label>
+          {{form.name(class="form-control", placeholder="Name")}}
+      </div>
+      <div class="form-group">
+        <label>Birthday</label>
+        {{form.birthday(class="form-control", placeholder="Birthday")}}
+      </div>
+      <div class="form-group">
+        <label>Birthplace</label>
+        {{form.birthplace(class="form-control", placeholder="Birthplace")}}
+      </div>
+      <div class="form-group">
+        <label>Place of disappearance</label>
+        {{form.place_of_disappearance(class="form-control", placeholder="Place of disappearance")}}
+      </div>
+      <div class="form-group">
+        <label>Disappearance details</label>
+        {{form.disappearance_details(class="form-control", placeholder="Disappearance details")}}
+      </div>
+      <div class="form-group">
+        <label>Photo</label>
+        {{form.photo(class="form-control", placeholder="Photo")}}
+      </div>
+      <div id="mp-btn-container">
+        <button type="submit" class="btn btn-primary">Update</button>
+        <a href="{{url_for('delete_missing_person', id=id)}}" class="btn btn-danger">Delete</a>
+      </div>
+      
+    </form>
+  
+  </div>
+  
+</div>
+{% endblock %}

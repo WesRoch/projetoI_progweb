@@ -1,0 +1,48 @@
+.list-group-item {
+
+  width: 500px
+}
+.list-group-item a {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.list-group-item img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+.list-group-item p {
+  margin-right: 25px;
+}
+
+#missing-people-content {
+  display: flex;
+  flex-direction: column;
+
+}
+
+#plus_button {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  margin-bottom: 30px;
+  margin-right: 30px;
+  border-style: none;
+  background-color: #217DEF;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+#plus_button img {
+  width: 30px;
+  height: 30px;
+}
